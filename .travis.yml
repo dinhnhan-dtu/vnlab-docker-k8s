@@ -5,19 +5,19 @@ services:
   - docker
 
 before_install:
-  - docker build -t nhandd/docker-react -f Dockerfile.dev .
+  - docker build -t nhandd/docker-k8s -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true nhandd/docker-react npm run test
+  - docker run -e CI=true nhandd/docker-k8s npm run test
 
 deploy:
   provider: elasticbeanstalk
-  region: 'us-east-1'
-  app: 'docker'
-  env: 'docker-env'
-  bucket_name: 'elasticbeanstalk-us-east-1-923445559289'
-  bucket_path: 'docker'
+  region: 'us-west-2'
+  app: 'docker-k8s'
+  env: 'Dockerk8s-env'
+  bucket_name: 'elasticbeanstalk-us-west-2-400297395993'
+  bucket_path: 'docker-k8s'
   on:
-    branch: main
+    branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
