@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Tao là Nhân đây. Mày sợ tao chưa. Tao sợ mày rồi!</p>
+        <p>Github -Travis CI - AWS EB</p>
         <a
           className="App-link"
           href="https://reactjs.org"
